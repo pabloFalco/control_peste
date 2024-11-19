@@ -668,5 +668,66 @@ var wpcf7_recaptcha = {"sitekey":"6LemVzQaAAAAAKU2AO3JEWTbjewae-PM2Ty497DQ","act
 /* ]]> */
 </script>
 <script type="text/javascript" src="js/index_1.js" id="wpcf7-recaptcha-js"></script>
-<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script><script>ktt10.setup({id:"7HZi6LS7JIkKDI",accountId:"1786651",color:"#36D6B5"})</script>
+	
+<style>
+  /* Styles for the text bubble */
+  #webchat-text-bubble {
+    display: none; /* Initially hidden */
+    position: absolute;
+    bottom: 80px; /* Space between the bubble and the button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #333;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Responsive for mobile */
+    text-align: center;
+    z-index: 1000;
+  }
+
+  /* Animation for the text bubble to appear */
+  #webchat-text-bubble.fade-in {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Ensure proper spacing for the webchat button */
+  #webchat-button-wrapper {
+    position: relative;
+  }
+</style>
+
+<div id="webchat-button-wrapper">
+  <div id="webchat-text-bubble">
+    If you have any questions, please ask them here, we're online now!
+  </div>
+</div>
+
+<script src="https://app.chatgptbuilder.io/webchat/plugin.js?v=5"></script>
+<script>
+  ktt10.setup({ id: "7HZi6LS7JIkKDI", accountId: "1786651", color: "#36D6B5" });
+
+  // Add delay for the text bubble to display
+  window.onload = function () {
+    setTimeout(function () {
+      const textBubble = document.getElementById('webchat-text-bubble');
+      if (textBubble) {
+        textBubble.classList.add('fade-in');
+      }
+    }, 5000); // Delay of 5 seconds
+  };
+</script>
+
 </body></html>
